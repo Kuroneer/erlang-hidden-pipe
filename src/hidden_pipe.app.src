@@ -1,0 +1,14 @@
+{application, hidden_pipe,
+ [{description, "erlang parse_transform to provice automatic access to the previous expression"},
+  {vsn, "1.0.0"},
+  {registered, []},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {licenses, ["MIT"]},
+  {links, []}
+ ]}.
