@@ -50,6 +50,12 @@ pipe_example() ->
 
 pipe_block_example() ->
     ["Erlang", "parse_transforms"] = begin "Erlang parse_transforms", string:split(_, " ") end.
+
+-define(pipe, begin).
+pipe_block_example2() ->
+    ["Erlang", "parse_transforms"] = ?pipe "Erlang parse_transforms", string:split(_, " ") end,
+    ok.
+
 ```
 
 Keep in mind that the Patterns are unchanged, so you can still do things like

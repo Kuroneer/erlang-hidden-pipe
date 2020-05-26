@@ -3,6 +3,7 @@
 -export([
          pipe_example/0,
          pipe_block_example/0,
+         pipe_block_example2/0,
 
          simple/0,
          double/0,
@@ -19,6 +20,11 @@ pipe_example() ->
 
 pipe_block_example() ->
     ["Erlang", "parse_transforms"] = begin "Erlang parse_transforms", string:split(_, " ") end,
+    ok.
+
+-define(pipe, begin).
+pipe_block_example2() ->
+    ["Erlang", "parse_transforms"] = ?pipe "Erlang parse_transforms", string:split(_, " ") end,
     ok.
 
 simple() ->
@@ -48,9 +54,9 @@ chain3() ->
     A.
 
 no_clash() ->
-    _51_25 = ok,
-    _52_26 = _51_25,
-    _53_27 = _52_26.
+    _57_21 = ok,
+    _58_22 = _57_21,
+    _59_23 = _58_22.
 
 %%====================================================================
 %% Private functions
